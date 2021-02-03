@@ -15,20 +15,20 @@ namespace Project1_Calculadora
             while (!finalizar)
             {
                 Console.WriteLine("Bem-vindo a calculadora. Selecione uma opção: ");
-                Console.WriteLine("1-Soma\n2-Subtracao\n3-Divisao\n4-Multiplicacao\n5-Potencia\n6-Raiz\n7-Fatorial\n8-Fibonacci\n9-Binário\n10-Sair");
+                Console.WriteLine("1-Soma\n2-Subtracao\n3-Divisao\n4-Multiplicacao\n5-Potencia\n6-Raiz\n7-Fatorial\n8-Fibonacci\n9-Binário\n10-Sair");  
 
-                Menu opcao = (Menu)int.Parse(Console.ReadLine());
-                /*      string w = Console.ReadLine();
                       int j = 0;
                       char f = 'a';
                       while (f == 'a')
                       {
+                          string w = Console.ReadLine();
                           try
                           {
                               j = int.Parse(w);
                               if (j > 10 || j < 1)
                               {
                                   Console.WriteLine("Informe uma opção válida");
+                                  Console.WriteLine("Selecione uma opção:");
                               }
                               else
                               {
@@ -38,10 +38,11 @@ namespace Project1_Calculadora
                           catch
                           {
                               Console.WriteLine("Informe uma opção válida");
+                              Console.WriteLine("Selecione uma opção:");
                           }
                       }
                 Menu opcao = (Menu)j;
-                */
+ 
                 switch (opcao)
                 {
                     case Menu.Soma:
