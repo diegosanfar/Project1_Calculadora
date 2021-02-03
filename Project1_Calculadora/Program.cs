@@ -17,9 +17,31 @@ namespace Project1_Calculadora
                 Console.WriteLine("Bem-vindo a calculadora. Selecione uma opção: ");
                 Console.WriteLine("1-Soma\n2-Subtracao\n3-Divisao\n4-Multiplicacao\n5-Potencia\n6-Raiz\n7-Fatorial\n8-Fibonacci\n9-Binário\n10-Sair");
 
-                
                 Menu opcao = (Menu)int.Parse(Console.ReadLine());
-
+                /*      string w = Console.ReadLine();
+                      int j = 0;
+                      char f = 'a';
+                      while (f == 'a')
+                      {
+                          try
+                          {
+                              j = int.Parse(w);
+                              if (j > 10 || j < 1)
+                              {
+                                  Console.WriteLine("Informe uma opção válida");
+                              }
+                              else
+                              {
+                                  f = 'b';
+                              }
+                          }
+                          catch
+                          {
+                              Console.WriteLine("Informe uma opção válida");
+                          }
+                      }
+                Menu opcao = (Menu)j;
+                */
                 switch (opcao)
                 {
                     case Menu.Soma:
@@ -95,73 +117,214 @@ namespace Project1_Calculadora
             }
         
             float soma = a + b;
-            Console.WriteLine($"O resultado da soma é: {soma}");
+            Console.WriteLine($"O resultado da soma é: {Math.Round(soma, 2)}");
             Console.WriteLine("Aperte qualquer tecla para voltar.");
             Console.ReadLine();
         }
         static void Subtrai()
         {
             Console.WriteLine("Subtração de dois números: ");
-            Console.WriteLine("Digite o primeiro número: ");
-            float a = float.Parse(Console.ReadLine());
-            Console.WriteLine("Digite o segundo número: ");
-            float b = float.Parse(Console.ReadLine());
+            char z = 'a';
+            float a = 0;
+            while (z == 'a')
+            {
+                Console.WriteLine("Digite o primeiro número: ");
+                string k = Console.ReadLine();
+                try
+                {
+                    a = float.Parse(k);
+                    z = 'b';
+                }
+                catch
+                {
+                    Console.WriteLine("Informe um número válido.");
+                }
+            }
+            float b = 0;
+            char y = 'a';
+            while (y == 'a')
+            {
+                    Console.WriteLine("Digite o segundo número: ");
+                    string x = Console.ReadLine();
+                try
+                {
+                    b = float.Parse(x);
+                    y = 'b';
+                }
+                catch
+                {
+                    Console.WriteLine("Informe um número válido.");
+                }
+            }
+            
             float subtrai = a - b;
-            Console.WriteLine($"O resultado da subtração é: {subtrai}");
+            Console.WriteLine($"O resultado da subtração é: {Math.Round(subtrai, 2 )}");
             Console.WriteLine("Aperte qualquer tecla para voltar.");
             Console.ReadLine();
         }
         static void Divisao()
         {
             Console.WriteLine("Divisão de dois números: ");
-            Console.WriteLine("Digite o primeiro número: ");
-            float a = float.Parse(Console.ReadLine());
+            char z = 'a';
+            float a = 0;
+            while (z == 'a')
+            {
+                Console.WriteLine("Digite o primeiro número: ");
+                string k = Console.ReadLine();
+                try
+                {
+                    a = float.Parse(k);
+                    z = 'b';
+                }
+                catch
+                {
+                    Console.WriteLine("Informe um número válido.");
+                }
+            }
             Console.WriteLine("Digite o segundo número: ");
-            float b = float.Parse(Console.ReadLine());
+            char y = 'a';
+            float b = 0;
+            while (y == 'a')
+            {
+                string x = Console.ReadLine();
+                try
+                {
+                    b = float.Parse(x);
+                    y = 'b';
+                }
+                catch
+                {
+                    Console.WriteLine("Informe um número válido.");
+                }
+            }
             float divisao = a / b;
-            Console.WriteLine($"O resultado da divisão é: {divisao}");
+            Console.WriteLine($"O resultado da divisão é: {Math.Round(divisao, 2)}");
             Console.WriteLine("Aperte qualquer tecla para voltar.");
             Console.ReadLine();
         }
         static void Multi()
         {
             Console.WriteLine("Multiplicação de dois números: ");
-            Console.WriteLine("Digite o primeiro número: ");
-            float a = float.Parse(Console.ReadLine());
-            Console.WriteLine("Digite o segundo número: ");
-            float b = float.Parse(Console.ReadLine());
+            char z = 'a';
+            float a = 0;
+            while (z == 'a')
+            {
+                Console.WriteLine("Digite o primeiro número: ");
+                string k = Console.ReadLine();
+                try
+                {
+                    a = float.Parse(k);
+                    z = 'b';
+                }
+                catch
+                {
+                    Console.WriteLine("Informe um número válido.");
+                }
+            }
+            char y = 'a';
+            float b = 0;
+            while (y == a)
+            {
+                Console.WriteLine("Digite o segundo número: ");
+                string x = Console.ReadLine();
+                try
+                {
+                    b = float.Parse(x);
+                    y = 'b';
+                }
+                catch
+                {
+                    Console.WriteLine("Informe um número válido.");
+                }
+            }
             float multi = a * b; ;
-            Console.WriteLine($"O resultado da multiplicação é: {multi}");
+            Console.WriteLine($"O resultado da multiplicação é: {Math.Round(multi, 2)}");
             Console.WriteLine("Aperte qualquer tecla para voltar.");
             Console.ReadLine();
         }
         static void Pot()
         {
             Console.WriteLine("Potência de dois números: ");
-            Console.WriteLine("Digite a base: ");
-            float Base = float.Parse(Console.ReadLine());
-            Console.WriteLine("Digite o expoente: ");
-            float Potencia = float.Parse(Console.ReadLine());
+            char z = 'a';
+            float Base = 0;
+            while (z == 'a')
+            {
+                Console.WriteLine("Digite a base: ");
+                string k = Console.ReadLine();
+                try
+                {
+                    Base = float.Parse(k);
+                    z = 'b';
+                }
+                catch
+                {
+                    Console.WriteLine("Informe uma base válida.");
+                }
+            }
+            char y = 'a';
+            float Potencia = 0;
+            while (y == 'a')
+            {
+                Console.WriteLine("Digite o expoente: ");
+                string x = Console.ReadLine();
+                try
+                {
+                    Potencia = float.Parse(x);
+                    y = 'b';
+                }
+                catch
+                {
+                    Console.WriteLine("Informe um expoente válido.");
+                }
+            }
             double resultado = Math.Pow(Base,Potencia); 
-            Console.WriteLine($"O resultado da potência é: {resultado}");
+            Console.WriteLine($"O resultado da potência é: {Math.Round(resultado, 2)}");
             Console.WriteLine("Aperte qualquer tecla para voltar.");
             Console.ReadLine();
         }
         static void Raiz()
         {
             Console.WriteLine("Raiz quadrada de um número: ");
-            Console.WriteLine("Informe o número: ");
-            float a = float.Parse(Console.ReadLine());
+            char z = 'a';
+            float a = 0;
+            while (z == 'a')
+            {
+                Console.WriteLine("Informe o número: ");
+                string k = Console.ReadLine();
+                try
+                {
+                    a = float.Parse(k);
+                    z = 'b';
+                }
+                catch
+                {
+                    Console.WriteLine("Informe um número válido.");
+                }
+            }
             double resultado = Math.Sqrt(a);
-            Console.WriteLine($"O resultado da raiz é: {resultado}");
+            Console.WriteLine($"O resultado da raiz é: {Math.Round(resultado, 2)}");
             Console.WriteLine("Aperte qualquer tecla para voltar.");
             Console.ReadLine();
         }
         static void Fator()
         {
             Console.WriteLine("Fatorial de um número: ");
-            Console.WriteLine("Informe o número: ");
-            int a = int.Parse(Console.ReadLine());
+            char z = 'a';
+            int a = 0;
+            while (z == 'a')
+            {
+                Console.WriteLine("Informe o número: ");
+                string k = Console.ReadLine();
+                try
+                {
+                    a = int.Parse(k);
+                    z = 'b';
+                }
+                catch
+                {
+                    Console.WriteLine("Informe um número válido.");
+                }
+            }
             int b = 1;
             int resultado = 1;
             for (b = 1; b <= a; b++)
@@ -176,15 +339,31 @@ namespace Project1_Calculadora
         static void Fibo()
         {
             Console.WriteLine("Sequência de Fibonacci: ");
-            Console.WriteLine("Informe a posição da contagem: ");
-            int a = int.Parse(Console.ReadLine());
-            int[] resultado = new int[a];
-            if (a == 0)
+            char z = 'a';
+            int a = 0;
+            while (z == 'a')
             {
-                Console.WriteLine("Posição inválida.");
-                Console.ReadLine();
+                Console.WriteLine("Informe a posição da contagem: ");
+                string k = Console.ReadLine();
+                try
+                {
+                    a = int.Parse(k);                  
+                    if (a == 0)
+                    {
+                        Console.WriteLine("Informe uma posição diferente de zero.");
+                    }
+                    else
+                    {
+                        z = 'b';
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Informe uma posição válida.");
+                }
             }
-            else if (a == 1)
+            int[] resultado = new int[a];
+            if (a == 1)
             {
                 Console.WriteLine("O número fibonacci dessa posição é: 0");
                 Console.WriteLine("Aperte qualquer tecla para voltar.");
