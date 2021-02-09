@@ -69,6 +69,9 @@ namespace Project1_Calculadora
                     case Menu.Fibonacci:
                         Fibo();
                         break;
+                    case Menu.Binario:
+                        Bin();
+                        break;
                     case Menu.Sair:
                         finalizar = true;
                         break;
@@ -393,7 +396,81 @@ namespace Project1_Calculadora
         }
         static void Bin()
         {
+            string opcao;
+            do
+            {
+                Console.WriteLine("Escolha a sua opção :");
+                Console.WriteLine("\t1 - Converter Binário para Decimal");
+                Console.WriteLine("\t2 - Converter Decimal para Binário");
+                Console.WriteLine("\t3 - Encerra o programa");
+                Console.Write("Sua opção ? ");
+                opcao = Console.ReadLine();
+                switch (opcao)
+                {
+                    case "1":
+                        ConverteBinarioParaDecimal();
+                        break;
+                    case "2":
+                        ConverteDecimalParaBinario();
+                        break;
+                    case "3":
+                        Console.WriteLine("Aperte qualquer tecla para voltar para a calculadora.");
+                        break;
+                    default:
+                        Console.WriteLine("Digite uma opção válida.");
+                        break;
+                }
+                Console.ReadKey();
+            } while (opcao != "3");
+        }
+        private static void ConverteDecimalParaBinario()
+        {
+            Console.WriteLine("Informe o número decimal a converter:");
+            char z = 'a';
+            string resultado = "";
+            string valor = "";
+            while (z == 'a')
+            {
+                valor = Console.ReadLine();
+                
+                try
+                {
+                    resultado = Conversor.DecimalBinario(valor);
+                    z = 'b';
+                }
+                catch
+                {
+                    Console.WriteLine("Informe um número válido.");
+                    Console.WriteLine("Informe o número decimal a converter");
+                }
+            }
+            Console.WriteLine($" O número {valor} é igual a {resultado} ");
+            Console.WriteLine("Aperte qualquer tecla para voltar ao menu de conversão.");
+        }
+        private static void ConverteBinarioParaDecimal()
+        {
+            Console.WriteLine("Informe o número binário a converter:");
+            char z = 'a';
+            int resultado = 0;
+            string valor = "";
+            while (z == 'a')
+            {
+                valor = Console.ReadLine();
 
+                try
+                {
+                    resultado = Conversor.BinarioDecimal(valor);
+                    z = 'b';
+                }
+                catch
+                {
+                    Console.WriteLine("Informe um número válido.");
+                    Console.WriteLine("Informe o número binário a converter:");
+                }
+            }
+            Console.WriteLine($" O número {valor} é igual a {resultado} ");
+            Console.WriteLine("Aperte qualquer tecla para voltar ao menu de conversão.");
         }
     }
+    
 }
